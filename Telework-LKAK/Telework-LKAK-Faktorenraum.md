@@ -13,3 +13,4 @@ Arbeitszufriedenheit?
 #### 2\. Faktorenraum
 
 ![Faktorenraum](images/FaktorenraumNEU.png)
+
