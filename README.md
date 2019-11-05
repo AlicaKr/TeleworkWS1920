@@ -1,16 +1,20 @@
-# TeleworkWS1920
+# Arbeitszufriedenheit durch Telework
 
 ================
 
-#### Teammitglieder
+### Teammitglieder
 
-Laura Skowronek, Katja Kever, Alica Kraus, Katharina Lehmeier
+* Laura Skowronek
+* Katja Kever
+* Alica Kraus
+* Katharina Lehmeier
+* Jiani Huang
 
-#### 1\. Forschungsfrage
-
-Welchen Einfluss haben Nutzerfaktoren auf durch Telework erzeugte
-Arbeitszufriedenheit?
-
-#### 2\. Faktorenraum
-
+#### Forschungsfrage und Faktorenraum
+_Welchen Einfluss haben Nutzerfaktoren auf durch Telework erzeugte
+Arbeitszufriedenheit?_
 ![Faktorenraum](images/FaktorenraumNEU.png)
+
+#### _Frühere Version_
+
+![Faktorenraum_alt](images/Faktorenraum.png)
