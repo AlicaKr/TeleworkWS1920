@@ -2,7 +2,8 @@
 
 library(tidyverse)
 
-raw <- read_csv("~/Downloads/RProject/TeleworkWS1920/data/Omnibusbefragung_A.csv")
+## JRH: Warum?
+# raw <- read_csv("~/Downloads/RProject/TeleworkWS1920/data/Omnibusbefragung_A.csv")
 
 source("data/qualtricshelpers.R")
 
@@ -16,6 +17,7 @@ names(raw_short)
 
 generate_codebook(raw_short, filename, "data/codebook.csv")
 
+## JRH: Warum keine aussagekräftigen Namen? 
 codebook <- read_codebook("data/codebook_final.csv")
 
 names(raw_short) <- codebook$variable
@@ -162,3 +164,12 @@ scores <- scoreItems(schluesselliste, raw_short, missing = TRUE, min = 1, max = 
 data <- bind_cols(raw_short, as_tibble(scores$scores))
 
 saveRDS(data, "data/data.rds")
+
+
+## JRH: Sieht schonmal gut aus!
+# Todo:
+# 1. Codebook
+# 2. .csv als numerisch oder als text?
+# 3. Was ist mit den Skalen? Haben Sie wirklich nur zwei?
+
+
