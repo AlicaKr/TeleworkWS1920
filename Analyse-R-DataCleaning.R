@@ -2,27 +2,28 @@
 
 library(tidyverse)
 
-raw <- read_csv("~/Downloads/RProject/TeleworkWS1920/data/Omnibusbefragung_A.csv")
+raw <- read_csv("~/Downloads/RProject/TeleworkWS1920/data/OmnibusbefragungA_NEU.csv")
 
 source("data/qualtricshelpers.R")
 
-filename <- "data/Omnibusbefragung_A.csv"
+filename <- "data/OmnibusbefragungA_NEU.csv"
 
 raw <- load_qualtrics_csv(filename)
 names(raw)
-raw_short <- raw[, c(-1:-17,-25, -38:-41, -50:-79, -96:-104)]
 
+
+raw_short <- raw[c(-1:-1110), c(-1:-17,-40:-41, -54:-83, -100:-108)]
 names(raw_short)
 
 generate_codebook(raw_short, filename, "data/codebook.csv")
 
-codebook <- read_codebook("data/codebook_final.csv")
+codebook <- read_codebook("data/codebook_NEU.csv")
 
 names(raw_short) <- codebook$variable
 
-raw_short$q8 <- as.factor(raw_short$q8)
+raw_short$geschlecht <- as.factor(raw_short$geschlecht)
 
-raw_short$q16 <- ordered(raw_short$q16, levels = c("kein Schulabschluss",
+raw_short$abschluss <- ordered(raw_short$abschluss, levels = c("kein Schulabschluss",
                                                      "Hauptschulabschluss",
                                                      "Realschulabschluss",
                                                      "Fachabitur",
@@ -34,7 +35,7 @@ raw_short$q16 <- ordered(raw_short$q16, levels = c("kein Schulabschluss",
                                                       "Promotion"
                                                     ))
 
-raw_short$q12 <- ordered(raw_short$q12, levels = c("Schueler",
+raw_short$taetigkeit <- ordered(raw_short$taetigkeit, levels = c("Schueler",
                     "Student",
 "Werksstudent",
 "Praktikant",
@@ -50,7 +51,7 @@ raw_short$q12 <- ordered(raw_short$q12, levels = c("Schueler",
 "Selbstständig",
 "Rentner" ))
 
-raw_short$q14 <- ordered(raw_short$q14, levels = c("Ich war noch nie berufstätig.",
+raw_short$branche <- ordered(raw_short$branche, levels = c("Ich war noch nie berufstätig.",
                                           "Bauwesen, Architektur, Vermessung",
 "Dienstleistung",
 "Elektro",
@@ -65,23 +66,23 @@ raw_short$q14 <- ordered(raw_short$q14, levels = c("Ich war noch nie berufstäti
 "Soziales, Pädagogik",
 "Technik, Technologiefelder",
 "Verkehr, Logistik",
-"Wirtschaft, Verwaltung",
-"Sonstiges (bitte angeben)"))
+"Wirtschaft, Verwaltung"))
 
-raw_short$q27 <- ordered(raw_short$q27, levels = c("unter 20 Std.",
+
+raw_short$af_2 <- ordered(raw_short$af_2, levels = c("unter 20 Std.",
                                                    "20 Std. bis 29 Std.",
                                                    "30 Std. bis 39 Std.",
                                                    "40 Std. bis 50 Std.",
                                                    "über 50 Std."))
   
-raw_short$q41 <- ordered(raw_short$q41, levels = c("ja",
+raw_short$af_4 <- ordered(raw_short$af_4, levels = c("ja",
                                                    "nein"))
 
-raw_short$q53 <- ordered(raw_short$q53, levels = c("Ich habe noch nie IKTs genutzt.",
+raw_short$ikt_1 <- ordered(raw_short$ikt_1, levels = c("Ich habe noch nie IKTs genutzt.",
                                                    "Ich nutze seit meinem Berufseinstieg dieselben IKTs.",
                                                    "Ich habe schon unterschiedliche IKTs genutzt."))
 
-raw_short$q44 <- ordered(raw_short$q44, levels = c("ja",
+raw_short$az_3 <- ordered(raw_short$az_3, levels = c("ja",
                                                    "nein"))
 scale.haeufigkeit <- c("Gar nicht",
                        "Weniger als einen Tag",
@@ -91,7 +92,7 @@ scale.haeufigkeit <- c("Gar nicht",
                        "Vier Tage",
                        "Mehr als vier Tage")
 
-raw_short$q42 <- ordered(raw_short$q42, levels = scale.haeufigkeit)
+raw_short$af_5 <- ordered(raw_short$af_5, levels = scale.haeufigkeit)
 
 scale.haeufigkeit1 <- c("Nie",
                         "Weniger als einmal im Monat",
@@ -100,8 +101,8 @@ scale.haeufigkeit1 <- c("Nie",
                         "Täglich",
                         "Mehrmals täglich")
 
-raw_short$q51_1 <- ordered(raw_short$q51_1, levels = scale.haeufigkeit1)
-raw_short$q51_2 <- ordered(raw_short$q51_2, levels = scale.haeufigkeit1)
+raw_short$ikt_2a <- ordered(raw_short$ikt_2a, levels = scale.haeufigkeit1)
+raw_short$ikt_2b <- ordered(raw_short$ikt_2b, levels = scale.haeufigkeit1)
 
 scale.zustimmung <- c("Stimme gar nicht zu", 
                      "Stimme nicht zu", 
@@ -110,47 +111,55 @@ scale.zustimmung <- c("Stimme gar nicht zu",
                      "Stimme zu", 
                      "Stimme völlig zu")
 
-raw_short$q43_1 <- ordered(raw_short$q43_1, levels = scale.zustimmung)
-raw_short$q43_2 <- ordered(raw_short$q43_2, levels = scale.zustimmung)
-raw_short$q43_3 <- ordered(raw_short$q43_3, levels = scale.zustimmung)
-raw_short$q43_4 <- ordered(raw_short$q43_4, levels = scale.zustimmung)
-raw_short$q43_5 <- ordered(raw_short$q43_5, levels = scale.zustimmung)
-raw_short$q43_6 <- ordered(raw_short$q43_6, levels = scale.zustimmung)
+raw_short$kut_1a <- ordered(raw_short$kut_1a, levels = scale.zustimmung)
+raw_short$kut_1b <- ordered(raw_short$kut_1b, levels = scale.zustimmung)
+raw_short$kut_1c <- ordered(raw_short$kut_1c, levels = scale.zustimmung)
+raw_short$kut_1d <- ordered(raw_short$kut_1d, levels = scale.zustimmung)
 
-raw_short$q57_1 <- ordered(raw_short$q57_1, levels = scale.zustimmung)
-raw_short$q57_2 <- ordered(raw_short$q57_2, levels = scale.zustimmung)
-raw_short$q57_3 <- ordered(raw_short$q57_3, levels = scale.zustimmung)
-raw_short$q57_4 <- ordered(raw_short$q57_4, levels = scale.zustimmung)
-raw_short$q57_5 <- ordered(raw_short$q57_5, levels = scale.zustimmung)
+raw_short$af_6a <- ordered(raw_short$af_6a, levels = scale.zustimmung)
+raw_short$af_6b <- ordered(raw_short$af_6b, levels = scale.zustimmung)
+raw_short$af_6c <- ordered(raw_short$af_6c, levels = scale.zustimmung)
+raw_short$af_6d <- ordered(raw_short$af_6d, levels = scale.zustimmung)
+raw_short$af_6e <- ordered(raw_short$af_6e, levels = scale.zustimmung)
+raw_short$af_6f <- ordered(raw_short$af_6f, levels = scale.zustimmung)
 
-raw_short$q38_1 <- ordered(raw_short$q38_1, levels = scale.zustimmung)
-raw_short$q38_2 <- ordered(raw_short$q38_2, levels = scale.zustimmung)
-raw_short$q38_3 <- ordered(raw_short$q38_3, levels = scale.zustimmung)
-raw_short$q38_4 <- ordered(raw_short$q38_4, levels = scale.zustimmung)
-raw_short$q38_5 <- ordered(raw_short$q38_5, levels = scale.zustimmung)
-raw_short$q38_6 <- ordered(raw_short$q38_6, levels = scale.zustimmung)
-raw_short$q38_7 <- ordered(raw_short$q38_7, levels = scale.zustimmung)
-raw_short$q38_8 <- ordered(raw_short$q38_8, levels = scale.zustimmung)
-raw_short$q38_9 <- ordered(raw_short$q38_9, levels = scale.zustimmung)
-raw_short$q38_10 <- ordered(raw_short$q38_10, levels = scale.zustimmung)
-raw_short$q38_11 <- ordered(raw_short$q38_11, levels = scale.zustimmung)
 
-raw_short$q46_1 <- ordered(raw_short$q46_1, levels = scale.zustimmung)
-raw_short$q46_2 <- ordered(raw_short$q46_2, levels = scale.zustimmung)
-raw_short$q46_3 <- ordered(raw_short$q46_3, levels = scale.zustimmung)
-raw_short$q46_4 <- ordered(raw_short$q46_4, levels = scale.zustimmung)
+raw_short$ikt_3a <- ordered(raw_short$ikt_3a, levels = scale.zustimmung)
+raw_short$ikt_3b <- ordered(raw_short$ikt_3b, levels = scale.zustimmung)
+raw_short$ikt_3c <- ordered(raw_short$ikt_3c, levels = scale.zustimmung)
+raw_short$ikt_3d <- ordered(raw_short$ikt_3d, levels = scale.zustimmung)
+raw_short$ikt_3e <- ordered(raw_short$ikt_3e, levels = scale.zustimmung)
 
-raw_short$q48_1 <- ordered(raw_short$q48_1, levels = scale.zustimmung)
-raw_short$q48_2 <- ordered(raw_short$q48_2, levels = scale.zustimmung)
-raw_short$q48_3 <- ordered(raw_short$q48_3, levels = scale.zustimmung)
-raw_short$q48_4 <- ordered(raw_short$q48_4, levels = scale.zustimmung)
-raw_short$q48_5 <- ordered(raw_short$q48_5, levels = scale.zustimmung)
 
-raw_short$q50_1 <- ordered(raw_short$q50_1, levels = scale.zustimmung)
-raw_short$q50_2 <- ordered(raw_short$q50_2, levels = scale.zustimmung)
-raw_short$q50_3 <- ordered(raw_short$q50_3, levels = scale.zustimmung)
-raw_short$q50_4 <- ordered(raw_short$q50_4, levels = scale.zustimmung)
-raw_short$q50_5 <- ordered(raw_short$q50_5, levels = scale.zustimmung)
+raw_short$az_1a <- ordered(raw_short$az_1a, levels = scale.zustimmung)
+raw_short$az_1b <- ordered(raw_short$az_1b, levels = scale.zustimmung)
+raw_short$az_1c <- ordered(raw_short$az_1c, levels = scale.zustimmung)
+raw_short$az_1d <- ordered(raw_short$az_1d, levels = scale.zustimmung)
+raw_short$az_1e <- ordered(raw_short$az_1e, levels = scale.zustimmung)
+raw_short$az_1f <- ordered(raw_short$az_1f, levels = scale.zustimmung)
+raw_short$az_1g <- ordered(raw_short$az_1g, levels = scale.zustimmung)
+raw_short$az_1h <- ordered(raw_short$az_1h, levels = scale.zustimmung)
+raw_short$az_1i <- ordered(raw_short$az_1i, levels = scale.zustimmung)
+raw_short$az_1j <- ordered(raw_short$az_1j, levels = scale.zustimmung)
+raw_short$az_1k <- ordered(raw_short$az_1k, levels = scale.zustimmung)
+raw_short$az_1l <- ordered(raw_short$az_1l, levels = scale.zustimmung)
+
+raw_short$az_4a <- ordered(raw_short$az_4a, levels = scale.zustimmung)
+raw_short$az_4b <- ordered(raw_short$az_4b, levels = scale.zustimmung)
+raw_short$az_4c <- ordered(raw_short$az_4c, levels = scale.zustimmung)
+raw_short$az_4d <- ordered(raw_short$az_4d, levels = scale.zustimmung)
+
+raw_short$az_5a <- ordered(raw_short$az_5a, levels = scale.zustimmung)
+raw_short$az_5b <- ordered(raw_short$az_5b, levels = scale.zustimmung)
+raw_short$az_5c <- ordered(raw_short$az_5c, levels = scale.zustimmung)
+raw_short$az_5d <- ordered(raw_short$az_5d, levels = scale.zustimmung)
+raw_short$az_5e <- ordered(raw_short$az_5e, levels = scale.zustimmung)
+
+raw_short$az_6a <- ordered(raw_short$az_6a, levels = scale.zustimmung)
+raw_short$az_6b <- ordered(raw_short$az_6b, levels = scale.zustimmung)
+raw_short$az_6c <- ordered(raw_short$az_6c, levels = scale.zustimmung)
+raw_short$az_6d <- ordered(raw_short$az_6d, levels = scale.zustimmung)
+raw_short$az_6e <- ordered(raw_short$az_6e, levels = scale.zustimmung)
 
 library(psych)
 
