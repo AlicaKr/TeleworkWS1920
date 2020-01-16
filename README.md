@@ -22,6 +22,7 @@ Durch unserer Forschungsfrage möchten wir herausstellen welchen Einfluss die Nu
 ![Faktorenraum_alt](images/Faktorenraum.png)
 
 
+
 ### Unterschiedshypothesen
 
 H: Mitarbeiter aus der jüngeren Altersgruppe mit flexiblen Arbeitsbedingungen, weisen eine höhere Arbeitszufriedenheit auf.
