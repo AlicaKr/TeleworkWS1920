@@ -2,12 +2,7 @@
 
 library(tidyverse)
 
-<<<<<<< HEAD
 raw <- read_csv("~/Downloads/RProject/TeleworkWS1920/data/OmnibusbefragungA_NEU.csv")
-=======
-## JRH: Warum?
-# raw <- read_csv("~/Downloads/RProject/TeleworkWS1920/data/Omnibusbefragung_A.csv")
->>>>>>> a1ea2998179a104efc0cfd96c7414dcef468050c
 
 source("data/qualtricshelpers.R")
 
@@ -22,12 +17,7 @@ names(raw_short)
 
 generate_codebook(raw_short, filename, "data/codebook.csv")
 
-<<<<<<< HEAD
 codebook <- read_codebook("data/codebook_NEU.csv")
-=======
-## JRH: Warum keine aussagekräftigen Namen? 
-codebook <- read_codebook("data/codebook_final.csv")
->>>>>>> a1ea2998179a104efc0cfd96c7414dcef468050c
 
 names(raw_short) <- codebook$variable
 
@@ -173,22 +163,11 @@ raw_short$az_6e <- ordered(raw_short$az_6e, levels = scale.zustimmung)
 
 library(psych)
 
-schluesselliste <- list(KUT_1 = c("kut_1a", "kut_1b", "kut_1c", "-kut_1d"),
-                        AZ_1 = c("-az_1a", "az_1b", "az_1c", "az_1d", "-az_1e", "-az_1f", "az_1g", "az_1h", "-az_1i", "az_1j", "az_1k", "az_1l"),
-                        AZ_6 = c("az_6a", "az_6b", "-az_6c", "az_6d", "az_6e"),
-                        AZ_4 = c("az_4a", "az_4b", "-az_4c", "-az_4d"))
+schluesselliste <- list(Q38 = c("-q38_1", "q38_2", "q38_3", "q38_4", "-q38_5", "-q38_6", "q38_7", "q38_8", "-q38_9", "q38_10", "q38_11", "q38_12"),
+                        Q50 = c("q50_1", "q50_2", "-q50_3", "q50_4", "q50_5"))
 
 scores <- scoreItems(schluesselliste, raw_short, missing = TRUE, min = 1, max = 6)
 
 data <- bind_cols(raw_short, as_tibble(scores$scores))
 
 saveRDS(data, "data/data.rds")
-
-
-## JRH: Sieht schonmal gut aus!
-# Todo:
-# 1. Codebook
-# 2. .csv als numerisch oder als text?
-# 3. Was ist mit den Skalen? Haben Sie wirklich nur zwei?
-
-

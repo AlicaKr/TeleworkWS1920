@@ -163,8 +163,11 @@ raw_short$az_6e <- ordered(raw_short$az_6e, levels = scale.zustimmung)
 
 library(psych)
 
-schluesselliste <- list(Q38 = c("-q38_1", "q38_2", "q38_3", "q38_4", "-q38_5", "-q38_6", "q38_7", "q38_8", "-q38_9", "q38_10", "q38_11", "q38_12"),
-                        Q50 = c("q50_1", "q50_2", "-q50_3", "q50_4", "q50_5"))
+schluesselliste <- list(KUT_1 = c("kut_1a", "kut_1b", "kut_1c", "-kut_1d"),
+                        AZ_1 = c("-az_1a", "az_1b", "az_1c", "az_1d", "-az_1e", "-az_1f", "az_1g", "az_1h", "-az_1i", "az_1j", "az_1k", "az_1l"),
+                        AZ_6 = c("az_6a", "az_6b", "-az_6c", "az_6d", "az_6e"),
+                        AZ_4 = c("az_4a", "az_4b", "-az_4c", "-az_4d"))
+
 
 scores <- scoreItems(schluesselliste, raw_short, missing = TRUE, min = 1, max = 6)
 
