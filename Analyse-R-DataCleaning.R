@@ -179,10 +179,6 @@ saveRDS(data, "data/data.rds")
 
 # Test dieser Kommentar sollte einen Change in Git auslösen
 
-## JRH: Sieht schonmal gut aus!
-# Todo:
-# 1. Codebook
-# 2. .csv als numerisch oder als text?
-# 3. Was ist mit den Skalen? Haben Sie wirklich nur zwei?
+
 
 
