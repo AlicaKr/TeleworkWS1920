@@ -2,12 +2,9 @@
 
 library(tidyverse)
 
-<<<<<<< HEAD
+
 raw <- read_csv("~/Downloads/RProject/TeleworkWS1920/data/OmnibusbefragungA_NEU.csv")
-=======
-## JRH: Warum?
-# raw <- read_csv("~/Downloads/RProject/TeleworkWS1920/data/Omnibusbefragung_A.csv")
->>>>>>> a1ea2998179a104efc0cfd96c7414dcef468050c
+
 
 source("data/qualtricshelpers.R")
 
@@ -22,12 +19,7 @@ names(raw_short)
 
 generate_codebook(raw_short, filename, "data/codebook.csv")
 
-<<<<<<< HEAD
 codebook <- read_codebook("data/codebook_NEU.csv")
-=======
-## JRH: Warum keine aussagekräftigen Namen? 
-codebook <- read_codebook("data/codebook_final.csv")
->>>>>>> a1ea2998179a104efc0cfd96c7414dcef468050c
 
 names(raw_short) <- codebook$variable
 
