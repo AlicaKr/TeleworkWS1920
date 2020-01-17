@@ -177,6 +177,8 @@ data <- bind_cols(raw_short, as_tibble(scores$scores))
 saveRDS(data, "data/data.rds")
 
 
+# Test dieser Kommentar sollte einen Change in Git auslösen
+
 ## JRH: Sieht schonmal gut aus!
 # Todo:
 # 1. Codebook
