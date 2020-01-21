@@ -39,9 +39,9 @@ H0: Es macht keinen Unterschied bei der durch Telework erzeugten Arbeitzufrieden
 H1: Es macht einen Unterschied bei der durch Telework erzeugten Arbeitzufriedenheit, in welcher Jobposition Mitarbeiter tätig sind. 
 Verfahren: ANOVA
 
-H: Es gibt eine höhere Arbeitszufrieden durch Telework, je nach Altersgruppe, Funktion und Position.
-H0: Durch Telework erzeugte Arbeitszufriedenheit ist unabhängig von Altersgruppe, Funktion und Position. 
-H1: Durch Telework erzeugte Arbeitszufriedenheit ist abhängig von Altersgruppe, Funktion und Position.
+H: Es gibt eine höhere Arbeitszufriedenheit durch Telework, je nach Funktion und Position.
+H0: Durch Telework erzeugte Arbeitszufriedenheit ist unabhängig von Funktion und Position. 
+H1: Durch Telework erzeugte Arbeitszufriedenheit ist abhängig von Funktion und Position.
 Verfahren: Dreifaktorielle ANOVA
 
 H: Mitarbeiter, die ihre Arbeitsstrukturen selbst einteilen können, haben eine höhere Arbeitszufriedenheit.
@@ -52,8 +52,8 @@ Verfahren: T-Test
 
 ## Zusammenhangshypothese
 
-H: Nutzerfreundliche ICTs verhelfen bei Telework zu einer höheren Arbeitszufriedenheit.
-H0: Die Nutzerfreundlichkeit der ICTs bei Telework erzeugt keinen Unterschied bei der  Arbeitszufriedenheit.
+H: Es gibt einen Zusammenhang zwischen der Nutzerfreundlichkeit von ICTs und der Arbeitszufriedenheit bei Telework.
+H0: Es gibt keinen Zusammenhang zwischen der Nutzerfreundlichkeit von ICTs und der Arbeitszufriedenheit bei Telework.
 Verfahren: Korrelation
 
 H: Es gibt einen negativen Zusammenhang zwischen dem Alter und der Arbeitszufriedenheit bei flexiblen Arbeitsbedingungen.
