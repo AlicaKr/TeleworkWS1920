@@ -9,7 +9,7 @@
 * Katharina Lehmeier
 * Jiani Huang
 
-#### Forschungsfrage und Faktorenraum
+### Forschungsfrage und Faktorenraum
 _Welchen Einfluss haben Nutzerfaktoren auf durch Telework erzeugte
 Arbeitszufriedenheit?_
 
@@ -50,7 +50,7 @@ H1: Es macht einen Unterschied bei der Arbeitszufriedenheit, ob der Mitarbeiter 
 Verfahren: T-Test
 
 
-## Zusammenhangshypothese
+### Zusammenhangshypothese
 
 H: Es gibt einen Zusammenhang zwischen der Nutzerfreundlichkeit von ICTs und der Arbeitszufriedenheit bei Telework.  
 H0: Es gibt keinen Zusammenhang zwischen der Nutzerfreundlichkeit von ICTs und der Arbeitszufriedenheit bei Telework.  
