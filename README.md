@@ -52,8 +52,8 @@ Verfahren: T-Test
 
 ### Zusammenhangshypothese
 
-H: Es gibt einen Zusammenhang zwischen der Nutzerfreundlichkeit von ICTs und der Arbeitszufriedenheit bei Telework.  
-H0: Es gibt keinen Zusammenhang zwischen der Nutzerfreundlichkeit von ICTs und der Arbeitszufriedenheit bei Telework.  
+H: Es gibt einen positiven Zusammenhang zwischen der Nutzerfreundlichkeit von IKTs und der Arbeitszufriedenheit bei flexiblen Arbeitsbedingungen.  
+H0: Es gibt keinen Zusammenhang zwischen der Nutzerfreundlichkeit von IKTs und der Arbeitszufriedenheit bei Telework.  
 Verfahren: Korrelation
 
 H: Es gibt einen negativen Zusammenhang zwischen dem Alter und der Arbeitszufriedenheit bei flexiblen Arbeitsbedingungen.  
@@ -64,10 +64,10 @@ H: Es gibt einen Zusammenhang zwischen dem Berufsfeld und der Arbeitszufriedenhe
 H0: Es gibt keinen Zusammenhang zwischen dem Berufsfeld und der Arbeitszufriedenheit bei Telework.  
 Verfahren: Korrelation
 
-H: Arbeitszufriedenheit bei Telework ist abhängig von nutzerfreundlichen ICTs und der Jobposition.  
-H0: Arbeitszufriedenheit bei Telework ist unabhängig von nutzerfreundlichen ICTs und der Jobposition.  
+H: Arbeitszufriedenheit bei Telework ist abhängig von nutzerfreundlichen IKTs und der Jobposition.  
+H0: Arbeitszufriedenheit bei Telework ist unabhängig von nutzerfreundlichen IKTs und der Jobposition.  
 Verfahren: Regression
 
-H: Es gibt einen positiven Zusammenhang zwischen nutzerfreundlichen ICTs und der Arbeitszufriedenheit bei flexiblen Arbeitsbedingungen.   
-H0: Es gibt keinen Zusammenhang zwischen nutzerfreundlichen ICTs und der Arbeitszufriedenheit bei flexiblen Arbeitsbedingungen.   
+H: Es gibt einen positiven Zusammenhang zwischen der Nutzung von IKTs und der Arbeitszufriedenheit im Hinblick auf commitment und involvement bei Telework.   
+H0: Es gibt keinen Zusammenhang zwischen der Nutzung von IKTs und der Arbeitszufriedenheit im Hinblick auf commitment und involvement bei Telework.   
 Verfahren: Korrelation
